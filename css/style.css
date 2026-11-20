@@ -1,0 +1,130 @@
+/* ---------- Colors: change these to restyle the whole site ---------- */
+:root {
+  --nav-bg: #edf4ff;        /* same light blue as the quote boxes */
+  --nav-fill: #303d46;      /* darker blue box behind hovered / current link */
+  --box-bg: #edf4ff;        /* light blue boxes */
+  --ink: #1c1c1c;
+}
+
+/* ---------- Base ---------- */
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 1.25rem;
+  line-height: 1.4;
+  color: var(--ink);
+  background: #fff;
+}
+.container { max-width: 1100px; margin: 0 auto; padding: 0 1.5rem 3rem; }
+p { margin: 0 0 1.5rem; }
+
+/* ---------- Navigation: full-width bar, links on the right ---------- */
+.site-nav { background: var(--nav-bg); }
+.nav-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;     /* pushes buttons to the right */
+}
+.site-nav a {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.1rem;
+  color: #000;              /* black buttons */
+  text-decoration: none;
+  padding: 1.2rem 1rem;
+  transition: background 0.2s, color 0.2s;
+}
+/* darker blue box with white text on hover and for the current page */
+.site-nav a:hover,
+.site-nav a:focus-visible,
+.site-nav a.active { background: var(--nav-fill); color: #fff; }
+
+/* ---------- Headings ---------- */
+h1, .quote {
+  font-family: "Noto Serif", Georgia, "Times New Roman", serif;
+}
+h1 { text-align: center; font-size: 3.6rem; font-weight: 600; margin: 3rem 0 1.5rem; }
+.subtitle {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.6rem;
+  text-align: center;
+  margin: 0 0 3rem;
+}
+
+/* ---------- Blue feature box (About Me: photo + quote) ---------- */
+.feature {
+  background: var(--box-bg);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+  padding: 4rem 5rem;
+  margin-bottom: 3rem;
+}
+.feature img { width: 100%; height: auto; display: block; }
+.quote { font-size: 2.1rem; line-height: 1.5; text-align: center; margin: 0 0 2.5rem; }
+.quote-author { font-family: Arial, Helvetica, sans-serif; font-size: 1.4rem; margin: 0; }
+
+/* Research page: quote box with no photo */
+.quote-box { background: var(--box-bg); padding: 3.5rem 4rem; margin-bottom: 3rem; text-align: center; }
+.quote-box .quote-author { text-align: center; }
+
+/* ---------- Text + photo side by side ---------- */
+.photo-layout {
+  display: grid;
+  grid-template-columns: 1fr minmax(240px, 30%);
+  gap: 2.5rem;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+.photo-layout > div p:last-child { margin-bottom: 0; }
+.photo-box { background: var(--box-bg); padding: 2rem; margin: 0; }
+.photo-box img { width: 100%; height: auto; display: block; }
+.photo-box figcaption {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.95rem;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+/* ---------- Banner at the bottom of About Me ---------- */
+.banner { width: 100%; height: auto; display: block; margin-top: 2rem; }
+
+/* ---------- Resume PDF ---------- */
+.pdf-link { font-family: Arial, Helvetica, sans-serif; font-size: 1rem; margin: 1.5rem 0 1rem; }
+.pdf-frame { width: 100%; height: 90vh; border: 0; background: #808080; }
+
+/* ---------- Footer ---------- */
+footer {
+  background: var(--box-bg);
+  padding: 1rem;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.9rem;
+}
+
+/* ---------- Fade-in when the About Me page opens ---------- */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.fade-in { opacity: 0; animation: fadeIn 0.8s ease-out forwards; }
+.delay-1 { animation-delay: 0.25s; }   /* university line */
+.delay-2 { animation-delay: 0.55s; }   /* blue photo + quote box */
+
+/* people who turn off animations in their settings just see the page */
+@media (prefers-reduced-motion: reduce) {
+  .fade-in { animation: none; opacity: 1; }
+}
+
+/* ---------- Phones ---------- */
+@media (max-width: 800px) {
+  h1 { font-size: 2.4rem; }
+  .feature { grid-template-columns: 1fr; padding: 2rem; gap: 2rem; }
+  .quote { font-size: 1.6rem; }
+  .quote-box { padding: 2rem 1.5rem; }
+  .photo-layout { grid-template-columns: 1fr; }
+}
