@@ -58,18 +58,33 @@ h1 { text-align: center; font-size: 3.6rem; font-weight: 600; margin: 3rem 0 1.5
 .feature {
   background: var(--box-bg);
   display: grid;
-  grid-template-columns: minmax(0, 280px) 1fr;   /* smaller portrait */
-  gap: 2.5rem;
+  grid-template-columns: minmax(0, 260px) 1fr;
+  gap: 2rem;
   align-items: center;
-  padding: 2rem 3rem;
-  margin-bottom: 2.5rem;
+  padding: 1.5rem 2.25rem;
+  margin-bottom: 2rem;
 }
 .feature img { width: 100%; height: auto; display: block; }
+.feature .quote {
+  font-size: 1.55rem;
+  line-height: 1.45;
+  margin-bottom: 1rem;
+}
 .quote { font-size: 1.8rem; line-height: 1.5; text-align: center; margin: 0 0 1.5rem; }
 .quote-author { font-family: Arial, Helvetica, sans-serif; font-size: 1.3rem; margin: 0; }
 
 /* Research page with quote box with no photo */
-.quote-box { background: var(--box-bg); padding: 3.5rem 4rem; margin-bottom: 3rem; text-align: center; }
+.quote-box {
+  background: var(--box-bg);
+  padding: 1.75rem 2.5rem;   /* was 3.5rem 4rem — much less scrolling needed */
+  margin-bottom: 2rem;       /* was 3rem */
+  text-align: center;
+}
+.quote-box .quote {
+  font-size: 1.45rem;        /* remember slightly smaller than the default 1.8rem */
+  line-height: 1.45;
+  margin-bottom: 0.75rem;
+}
 .quote-box .quote-author { text-align: center; }
 
 /* ---------- Text and photo side by side ---------- */
@@ -114,6 +129,30 @@ footer {
 .fade-in { opacity: 0; animation: fadeIn 0.8s ease-out forwards; }
 .delay-1 { animation-delay: 0.25s; }   /* university line */
 .delay-2 { animation-delay: 0.55s; }   /* blue photo + quote box */
+
+/* --------- References for Research Page ---------- */
+.references {
+    margin-top: 30px;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.references h3 {
+  font-family: "Noto Serif", Georgia, "Times New Roman", serif;
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin: 0 0 1rem;
+}
+
+.references p {
+    padding-left: 30px;
+    text-indent: -30px;
+}
+
+.references a {
+    color: inherit;
+    text-decoration: underline;
+}
 
 /* for people who turn off animations in their settings just see the page */
 @media (prefers-reduced-motion: reduce) {
