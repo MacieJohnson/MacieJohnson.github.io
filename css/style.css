@@ -1,4 +1,4 @@
-/* ---------- Colors: change these to restyle the whole site ---------- */
+/* ---------- Colors ---------- */
 :root {
   --nav-bg: #edf4ff;        /* same light blue as the quote boxes */
   --nav-fill: #303d46;      /* darker blue box behind hovered / current link */
@@ -19,7 +19,7 @@ body {
 .container { max-width: 1100px; margin: 0 auto; padding: 0 1.5rem 3rem; }
 p { margin: 0 0 1.5rem; }
 
-/* ---------- Navigation: full-width bar, links on the right ---------- */
+/* ---------- Navigation Bar ---------- */
 .site-nav { background: var(--nav-bg); }
 .nav-inner {
   max-width: 1100px;
@@ -27,17 +27,17 @@ p { margin: 0 0 1.5rem; }
   padding: 0 1.5rem;
   display: flex;
   flex-wrap: wrap;
-  justify-content: flex-end;     /* pushes buttons to the right */
+  justify-content: flex-end;     /* looks better for these to be on the right */
 }
 .site-nav a {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 1.1rem;
-  color: #000;              /* black buttons */
+  color: #000;              /* black buttons they look better */
   text-decoration: none;
   padding: 1.2rem 1rem;
   transition: background 0.2s, color 0.2s;
 }
-/* darker blue box with white text on hover and for the current page */
+/* darker blue box effect on white text */
 .site-nav a:hover,
 .site-nav a:focus-visible,
 .site-nav a.active { background: var(--nav-fill); color: #fff; }
@@ -54,25 +54,25 @@ h1 { text-align: center; font-size: 3.6rem; font-weight: 600; margin: 3rem 0 1.5
   margin: 0 0 3rem;
 }
 
-/* ---------- Blue feature box (About Me: photo + quote) ---------- */
+/* ---------- Blue box with portrait photo and quote ---------- */
 .feature {
   background: var(--box-bg);
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 3rem;
+  grid-template-columns: minmax(0, 280px) 1fr;   /* smaller portrait */
+  gap: 2.5rem;
   align-items: center;
-  padding: 4rem 5rem;
-  margin-bottom: 3rem;
+  padding: 2rem 3rem;
+  margin-bottom: 2.5rem;
 }
 .feature img { width: 100%; height: auto; display: block; }
-.quote { font-size: 2.1rem; line-height: 1.5; text-align: center; margin: 0 0 2.5rem; }
-.quote-author { font-family: Arial, Helvetica, sans-serif; font-size: 1.4rem; margin: 0; }
+.quote { font-size: 1.8rem; line-height: 1.5; text-align: center; margin: 0 0 1.5rem; }
+.quote-author { font-family: Arial, Helvetica, sans-serif; font-size: 1.3rem; margin: 0; }
 
-/* Research page: quote box with no photo */
+/* Research page with quote box with no photo */
 .quote-box { background: var(--box-bg); padding: 3.5rem 4rem; margin-bottom: 3rem; text-align: center; }
 .quote-box .quote-author { text-align: center; }
 
-/* ---------- Text + photo side by side ---------- */
+/* ---------- Text and photo side by side ---------- */
 .photo-layout {
   display: grid;
   grid-template-columns: 1fr minmax(240px, 30%);
@@ -115,7 +115,7 @@ footer {
 .delay-1 { animation-delay: 0.25s; }   /* university line */
 .delay-2 { animation-delay: 0.55s; }   /* blue photo + quote box */
 
-/* people who turn off animations in their settings just see the page */
+/* for people who turn off animations in their settings just see the page */
 @media (prefers-reduced-motion: reduce) {
   .fade-in { animation: none; opacity: 1; }
 }
